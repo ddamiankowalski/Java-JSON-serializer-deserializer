@@ -37,6 +37,14 @@
             <artifactId>pdfbox</artifactId>
             <version>3.0.0-RC1</version>
         </dependency>
+
+        <!--TESTING JUNIT-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>
