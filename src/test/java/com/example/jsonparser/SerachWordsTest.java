@@ -14,8 +14,8 @@ public class SerachWordsTest extends TestCase {
 
     @Before
     public void setUp() throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        dictionary = mapper.readValue(new File("src/main/java/com/example/jsonparser/English.json"), Dictionary.class);
+        dictionary.setLanguage("English");
+        dictionary.addWord("abortion");
     }
 
     // the test below checks whether the function searchWord retuns the String if the word does exist in the dictionary
