@@ -11,6 +11,31 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+            /*
+            INSTRUCTIONS:
+            Welcome, this program uses Jackson to serialize and deserialize JSON files into Java objects.
+            There are several JSON files already existing in this project. They are so-called dictionaries.
+            Instructions:
+            - You can type in the word and see if it exists in any of the dictionaries (or JSON files otherwise)
+            - If the word does not exist, the program will not prompt any messages
+            - If the word exists in a given language, the program will prompt back a message
+
+            HOW TO ADD NEW WORDS TO A DICTIONARY:
+            - First, type in the symbol '*'
+            - The program will ask you for a language
+            - Then the program will ask you for a word that you want to add
+            - If the language already exists in the 'database', the word will be added there
+            - If the language does not exist, a new database will be added and your word appended
+
+            PDF FILE:
+            - In order to exit the loop you need to type in '!' symbol and press Enter
+            - The program will automatically exit the loop and create a new PDF file
+            - The PDF file contains a brief report of the words that have been found in the database by the user
+
+            TESTS:
+            - Unit tests of some functions are also included in 'test' directory
+            */
+
     static Scanner scanner = new Scanner(System.in);
     static ObjectMapper mapper = new ObjectMapper();
     static List<Dictionary> dictionaries = new ArrayList<>();
@@ -89,7 +114,9 @@ public class Main {
                 addEntry(inputWord, inputLanguage);
             } else {
                 // searching for a given word
-                searchWords(input);
+                if(searchWords(input).isEmpty()) {
+                  System.out.println("This word has not been found in any of the dictionaries");
+                };
             }
         } while(!input.equalsIgnoreCase("!"));
 

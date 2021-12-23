@@ -1,5 +1,7 @@
 package com.example.jsonparser;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ public class Dictionary {
 
     private List<String> words = new ArrayList<>();
     private String language;
+    @JsonIgnore
     private List<String> history = new ArrayList<>();
 
     // methods
